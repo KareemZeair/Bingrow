@@ -30,7 +30,7 @@ BingrowBoard::BingrowBoard(int n){
 deque <BingrowSquare> row{};
 
 int center = (n+1)/2; 
-int size = n;
+//int size = n;
 
 // adds rows of deques = n
 for (int i = 1; i <= n; i++ ){
@@ -101,7 +101,7 @@ void BingrowBoard::addUpperRow(){
     int finalNumber = (1) + (rand() % (3*size)); 
     Symbol symbol;
 
-    for (int i = 0; i < row.size(); i++) {
+    for (unsigned int i = 0; i < row.size(); i++) {
         for (int j = 1; j <= size; j++ ){
             BingrowSquare square;
             row.push_back(square);
@@ -136,8 +136,8 @@ deque <BingrowSquare> row{};
     int finalNumber = (1) + (rand() % (3*size)); 
     Symbol symbol;
 
-    for (int i = 0; i < row.size(); i++) {
-        for (int j = 1; j <= size; j++ ){
+    for (unsigned int i = 0; i < row.size(); i++) {
+        for ( int j = 1; j <= size; j++ ){
             BingrowSquare square;
             row.push_back(square);
             if (randomSymbolType==1){
@@ -162,7 +162,7 @@ deque <BingrowSquare> row{};
 
 // function to add a column to the end of the board
 void BingrowBoard::addRightCol(){
-    for (int i = 0; i < BingoX.size(); i++) {
+    for (unsigned int i = 0; i < BingoX.size(); i++) {
         BingrowSquare square;
         int size = BingrowBoard::GetSize()+1;
         srand(time(0));
@@ -192,7 +192,7 @@ void BingrowBoard::addRightCol(){
 
 // function to add a column to the beginning of the board
 void BingrowBoard::addLeftCol(){
-    for (int i = 0; i < BingoX.size(); i++) {
+    for (unsigned int i = 0; i < BingoX.size(); i++) {
         BingrowSquare square;
         int size = BingrowBoard::GetSize()+1;
         srand(time(0));
@@ -296,19 +296,21 @@ bool BingrowBoard::WinningBoard(void){
     int size = BingrowBoard::GetSize();
 
     int countCoveredRow = 0;
-    int countCoveredCol = 0;
+//    int countCoveredCol = 0;
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size ; j++){
             deque <BingrowSquare> currentRow = BingoX[i];
             BingrowSquare currentSquare = currentRow[j];
-            Symbol currentSymbol = currentSquare.getSymbol();  
+//            Symbol currentSymbol = currentSquare.getSymbol();  
             if (currentSquare.getCovered()==true){
                 countCoveredRow++;    
             } 
 
         }
     }
-    if(countCoveredRow >= 5){return true;}
+    if(countCoveredRow >= 5){
+        iswinning = true;
+        return iswinning;}
     else{return false;}
 }
 
