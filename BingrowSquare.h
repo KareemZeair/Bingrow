@@ -1,3 +1,6 @@
+#ifndef BINGROWSQUARE_H
+#define BINGROWSQUARE_H
+
 #include "Symbol.h"
 
 class BingrowSquare
@@ -27,3 +30,5 @@ public:
       return ((this->symbol == other.symbol) && (this->covered == other.covered));
    }
 };
+
+#endif

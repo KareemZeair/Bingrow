@@ -1,3 +1,6 @@
+#ifndef SYMBOL_H
+#define SYMBOL_H
+
 enum SymbolType {Number, Free, Arrow};
 enum ArrowType {UpperLeft, UpperRight, LowerLeft, LowerRight};
 
@@ -45,3 +48,5 @@ public:
    }
 
 };
+
+#endif
