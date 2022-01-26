@@ -11,7 +11,6 @@ using namespace std;
 class BingrowBoard
 {
    private:
-      // YOU WILL HAVE TO ADD YOUR OWN PRIVATE DATA MEMBERS AND MEMBER FUNCTIONS HERE
       int size;
       
    public:
